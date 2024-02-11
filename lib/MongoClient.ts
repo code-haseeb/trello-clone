@@ -1,6 +1,6 @@
 
 import { MongoClient } from "mongodb";
-import { Play } from "next/font/google";
+// import { Play } from "next/font/google";
 
 if (!process.env.MONGODB_URI) {
   throw new Error("Please add your Mongo URI to .env.local");
