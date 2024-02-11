@@ -1,5 +1,6 @@
 
 import { MongoClient } from "mongodb";
+import { Play } from "next/font/google";
 
 if (!process.env.MONGODB_URI) {
   throw new Error("Please add your Mongo URI to .env.local");
@@ -25,6 +26,14 @@ if (process.env.NODE_ENV === "development") {
 } else {
   client = new MongoClient(uri);
   clientPromise = client.connect();
-
 }
+
+// clientPromise.then(async (client)=>{
+//   const admindb = client.db("admin")
+//   const result = await admindb.admin().listDatabases();
+//   console.log("listDatabases")
+//   result.databases.forEach((db)=>{
+//     console.log(db)
+//   })
+// })
 export default clientPromise;
